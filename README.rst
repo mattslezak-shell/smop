@@ -11,7 +11,17 @@
 Installation
 ============
 
-``smop3`` is available from PyPI:
+It's best to use THIS forked version of the software if you're converting option code over, as that's how it's been modified.
+
+In this case, you want to copy the zip file from the GitHub site to your local PC, and then unzip it.  From the unzipped directory, type:
+
+python setup.py install
+
+This will "almost" be complete.  Next you need to go to wherever the installation occurs.  In Anaconda3, it should be at C:\Users\FirstName.LastName\Anaconda3\Lib\site-packages\smop3-0.41b0-py3.x.egg, note that the py3.x will be whatever python version you actually have installed (3.5, 3.7, 3.9, whatever).
+
+Now you need to unzip that smop3-0.41b0-py3.x.egg file in the same directory, which will create a \smop\ directory so that things will actually work.  Meaning, when you type: smop "filename.m", it can find everything it needs to complete the .py conversion, and the generated .py file can find what it needs to work.  Now, it's not perfect - some files will be created that have incorrect indentation, or other various issues.  Some math functions won't be ported over, so you'll need to manually edit the files.  The converter is kind of a "MATLAB-clone" representation in Python.  So it is not perfect, but generally works.  Good for hacking over MATLAB code that you aren't sure you want to port over to Python yet, so you can just do some minimal work to the auto-converted files and see if it does what you need or not.  If it is what you're wanting, then you should probably manually convert it over to pure Python... which will require some knowledge of both MATLAB and Python data structures.  You don't have to, but it's cleaner, and easier to distribute (this SMOP project is basically dead, so don't expect end users to get it working).  Just my opinion...
+
+``smop3`` is available from PyPI, although I'd suggest using this version as it's actually been tested.
 
 .. code-block:: bash
 
