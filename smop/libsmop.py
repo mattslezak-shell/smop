@@ -26,6 +26,10 @@ import unittest
 from scipy.special import gamma
 from numpy import rint as fix
 
+from scipy.stats import norm
+
+def normcdf(x): return norm.cdf(x)
+def normpdf(x): return norm.pdf(x)
 
 def isvector_or_scalar(a):
     """
